@@ -104,6 +104,20 @@ header {
   align-items: center;
 }
 
+.nav-page-menu:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 250px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/kazoku-small-min.png);
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: -1;
+}
+
 .nav-page-menu > ul {
   display: flex;
   flex-direction: column;
@@ -203,6 +217,12 @@ header {
   transition: opacity 800ms ease-in-out;
 }
 
+/* ---------------- SECTION - ANALYSIS ----------*/
+
+.analysis--section {
+  padding: 30px 15px;
+}
+
 /* ---------------- FOOTER ----------*/
 footer {
   position: absolute;
@@ -231,7 +251,7 @@ footer {
 }
 
 .footnote-1 {
-  margin-top: 25px;
+  margin-top: 20px;
   color: #555656;
 }
 
