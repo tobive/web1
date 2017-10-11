@@ -42,8 +42,8 @@ burgerButton.addEventListener('click', function(e) {
 //-------------------------------------------------
 //--- load JSON content for drop-down-form
 //-------------------------------------------------
-var DATA_LOC = "data.json"; //location of json file to be loaded
-var DOC_LOC = "/documents/"; //location of documents
+var DATA_LOC = "data.json"; // location of json file to be loaded
+var DOC_LOC = "/documents/"; // path location of documents
 
 function loadJSON(fileLocation, callback) {
   var xobj = new XMLHttpRequest();
@@ -104,6 +104,5 @@ function populateDropDown(response) {
     e.stopPropagation();
   });
 }
-
 
 loadJSON(DATA_LOC, populateDropDown);

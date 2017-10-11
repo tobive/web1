@@ -1,7 +1,7 @@
 {
   "data": [
   {
-    "year": "23",
+    "year": "平成 24 年",
     "list": [
       {
         "date": "15-01",
@@ -9,32 +9,32 @@
       },
       {
         "date": "17-02",
-        "filename": "02.pdf"
+        "filename": "02.txt"
       },
       {
         "date": "14-03",
-        "filename": "03.pdf"
+        "filename": "03.txt"
       },
       {
         "date": "13-04",
-        "filename": "04.pdf"
+        "filename": "04.txt"
       }
     ]
   },
   {
-    "year": "24",
+    "year": "平成 23 年",
     "list": [
       {
         "date": "12-05",
-        "filename": "06.pdf"
+        "filename": "06.txt"
       },
       {
         "date": "17-06",
-        "filename": "07.pdf"
+        "filename": "07.txt"
       },
       {
         "date": "19-07",
-        "filename": "08.pdf"
+        "filename": "08.txt"
       }
     ]
   }]
