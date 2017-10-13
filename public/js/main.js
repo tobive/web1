@@ -106,3 +106,12 @@ function populateDropDown(response) {
 }
 
 loadJSON(DATA_LOC, populateDropDown);
+
+//-------------------------------------------------
+//--- Calculate Year
+//-------------------------------------------------
+var yearSpan = document.querySelector('#year-span');
+var year = new Date();
+var BORN = 1989 + 3;//Heisei year 3
+
+yearSpan.innerHTML = year.getFullYear() - BORN;
