@@ -446,6 +446,7 @@ footer {
 }
 
 .footnote-link--small {
+  height: 40px;
   width: 100%;
   margin-top: 10px;
   padding: 5px 0;
