@@ -1,26 +1,37 @@
 //-------------------------------------------------
 //--- gif-like transition for collection of images
 //-------------------------------------------------
-var imgClass = ".anim-image";
-var imgArr = document.querySelectorAll(imgClass);
-var TIME_DELAY = 3000; //time until image changed
+var imgClass1 = ".anim-image";
+var imgArr1 = document.querySelectorAll(imgClass1);
+var TIME_DELAY1 = 4000; //time until image changed
 
-function createAnimatedImages(animImages) {
-  for(let i=imgArr.length-1; i>=0; i--) {
-    imgArr[i].style.opacity = 1;
+function createAnimatedImages(animImages, timeDelay) {
+  for(let i=animImages.length-1; i>=0; i--) {
+    animImages[i].style.opacity = 1;
     // console.log("put image " + i + " to on." );
     setTimeout(function() {
-      imgArr[i].style.opacity = 0;
+      animImages[i].style.opacity = 0;
       // console.log("remove anim from image " + i + " .");
-    }, (imgArr.length - i) * TIME_DELAY);
+    }, (animImages.length - i) * timeDelay);
   }
 }
 
-createAnimatedImages(imgClass);
+createAnimatedImages(imgArr1, TIME_DELAY1);
 setInterval(function() {
   // console.log("RUNNING");
-  createAnimatedImages(imgClass);
-}, (imgArr.length + 1) * TIME_DELAY);
+  createAnimatedImages(imgArr1, TIME_DELAY1);
+}, (imgArr1.length + 1) * TIME_DELAY1);
+
+//Product Image Animation
+var imgClass2 = ".product-image";
+var imgArr2 = document.querySelectorAll(imgClass2);
+var TIME_DELAY2 = 3000; //time until image changed
+
+createAnimatedImages(imgArr2, TIME_DELAY2);
+setInterval(function() {
+  // console.log("RUNNING");
+  createAnimatedImages(imgArr2, TIME_DELAY2);
+}, (imgArr2.length + 1) * TIME_DELAY2);
 
 //-------------------------------------------------
 //--- click and animation for nav-burger button
