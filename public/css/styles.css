@@ -162,8 +162,9 @@ header {
 }
 
 .nav-page-footer {
-  margin: 0 auto;
-  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 30px 20px 30px;
 }
 
 .nav-footnote-1 {
@@ -649,7 +650,12 @@ footer {
   }
 }
 /* iPhone 4* */
-@media only screen and (max-height: 480px) and (min-height: 416px) {
+@media only screen and (max-height: 510px) and (min-height: 416px) {
+  .nav-page-footer {
+      justify-content: center;
+      align-items: center;
+  }
+
   .nav-footnote-1 {
     position: absolute;
     left: -9999px;
@@ -675,7 +681,7 @@ footer {
 
   /* ANIMATION */
   .anim-img-previewer,
-  .product-img-previewer {    
+  .product-img-previewer {
     position: relative;
     z-index: 1;
     width: 100%;
