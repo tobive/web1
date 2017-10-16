@@ -7,7 +7,11 @@ app.use('/', express.static('public', {
     // res.type('text/html; charset=UTF-8; application/json');
     // res.setHeader('Content-Type','text/css');
     // res.setHeader('Content-Type', 'charset=utf-8');
-    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Cache-Control', 'public, max-age=600');
+    res.setHeader('Vary', 'Accept-Encoding, Cookie');
+    res.setHeader('Transfer-Encoding', 'chunked');
+    res.setHeader('Accept-Ranges', 'bytes');
+    res.setHeader('Connection', 'Keep-Alive');
     // console.log(res.get('Content-Type'));
   }
 }));
