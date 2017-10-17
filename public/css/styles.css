@@ -17,6 +17,7 @@ html, body {
 }
 
 section {
+  position: relative;
   min-height: 100%;
   min-height: calc(100vh - 70px);
 }
@@ -30,6 +31,15 @@ section {
 .jp-font {
   font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
   letter-spacing: 1px;
+}
+
+.bg-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #01487f;
+  opacity: 0.8;
+  z-index: 2;
 }
 
 /* ---------------- HEADER ----------*/
@@ -210,7 +220,6 @@ header {
 .bg-accent {
   position: absolute;
   display: block;
-  top: 70px;
   width: 100%;
   height: 200px;
   z-index: 3;
@@ -223,7 +232,7 @@ header {
 
 .hero-text {
   position: absolute;
-  top: 370px;
+  top: 300px;
   font-size: 30px;
   z-index: 3;
   padding-left: 20px;
@@ -270,7 +279,8 @@ header {
 }
 
 .product-intro--title {
-  margin: 30px 0px;
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 
 .product-intro--title > h2 {
@@ -328,9 +338,14 @@ header {
 /* ---------------- SECTION - KENKAIRO ----------*/
 
 .kenkairo--section {
-  padding: 30px 15px 20px 15px;
-  background: url(../images/backgrounds/bg-1-blue.jpg) no-repeat 30% 80% / cover;
+  background: url(../images/backgrounds/bg-1-raw.jpg) no-repeat 30% 80% / cover;
   color: #E1F5FE;
+}
+
+.kenkairo--content {
+  position: relative;
+  padding: 30px 15px;
+  z-index: 3;
 }
 
 .kenkairo-title {
@@ -555,37 +570,120 @@ footer {
 }
 
 /* ===============================================
-*
-* RESOLUTION WIDTH 550px ABOVE
-*
-* ===============================================
+*  ===============================================
+*       RESOLUTION WIDTH 768-1024px (iPad)
+*  ===============================================
+*  ===============================================
 */
 
-@media only screen and (min-width: 550px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  section {
+    min-height: 0px;
+  }
+
+  /* ---------------- NAV-PAGE ---------- */
+  .nav-page-footer {
+    margin: 0 auto;
+    width: 500px;
+  }
 
   /* ---------------- ANIMATION ----------*/
 
   .anim-img-previewer {
     position: relative;
-    border: 0;
-    width: 1600px;
-    /*height: 200px;*/
+    /*min-width: 768px;*/
+    height: 450px;
   }
 
   .anim-image-first {
     opacity: 1;
-    width: 1600px;
+    /*min-width: 768px;*/
+  }
+
+  .anim-image {
+    /*min-width: 768px;*/
+  }
+
+  .product-img-previewer {
+    position: relative;
+    border: 0;
+    /*min-width: 768px;*/
+  }
+
+  .product-image-first {
+    opacity: 1;
+    /*min-width: 768px;*/
+  }
+
+  .product-image {
+    /*min-width: 768px;*/
+  }
+
+  /* ---------------- PRODUCT SECTION ----------*/
+  .product-intro--title {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 35px;
+    color: #01579B;
+  }
+
+  .product-intro--info {
+    margin-bottom: 40px;
+  }
+
+  .product-accent {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    height: 80%;
+    width: 70%;
+  }
+
+  .product-intro--text {
+    width: 350px;
+    position: absolute;
+    right: 50px;
+    bottom: 20px;
+    z-index: 4;
+  }
+
+  .product-intro--text > p {
+    font-size: 25px;
+  }
+
+  /* ---------------- ANALYSIS SECTION ----------*/
+  .dropdown-date,
+  .dropdown-year,
+  .dropdown-download {
+    width: 33.3%;
+    margin-bottom: 0;
+  }
+
+  .analysis-select {
+    margin-bottom: 80px;
+  }
+
+  /* ---------------- KENKAIRO SECTION ----------*/
+  .kenkairo--content {
+    width: 400px;
+  }
+
+  .kenkairo-text {
+    margin-bottom: 80px;
   }
 }
 
 /* ===============================================
-*
-* RESOLUTION WIDTH 900px ABOVE
-*
-* ================================================
+*  ===============================================
+*       RESOLUTION WIDTH 1025px ABOVE
+*  ===============================================
+*  ================================================
 */
 
-@media only screen and (min-width: 860px) {
+@media only screen and (min-width: 1025px) {
   /* ---------------- HERO ----------*/
   .hero-text {
     top: 400px;
@@ -677,7 +775,7 @@ footer {
 
   /* ---------------- KENKAIRO SECTION ----------*/
 
-  .kenkairo--section {
+  .kenkairo--content {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -719,14 +817,14 @@ footer {
     padding-left: 30px;
   }
 
+  .dropdown-year,
   .dropdown-date,
-  .dropdown-year {
-    width: 33.3%;
-    margin-bottom: 0px;
-  }
-
   .dropdown-download {
     width: 33.3%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0px;
   }
 
   /* ---------------- FOOTER ----------*/
@@ -758,10 +856,10 @@ footer {
 }
 
 /* ===============================================
-*
-* MOBILE LANDSCAPE MODE
-*
-* ===============================================
+*  ===============================================
+*             MOBILE LANDSCAPE MODE
+*  ===============================================
+*  ===============================================
 */
 
 @media only screen and (orientation: landscape) {
@@ -810,10 +908,10 @@ footer {
 
 
 /* ===============================================
-*
-* MOBILE HEIGHT 570px BELOW
-*
-* ===============================================
+*  ===============================================
+*         MOBILE HEIGHT 570px BELOW
+*  ===============================================
+*  ===============================================
 */
 
 /* iPhone 4* */
