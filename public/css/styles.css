@@ -253,6 +253,10 @@ header {
   overflow: hidden;
 }
 
+.anim-img-previewer > img {
+  margin-left: -400px;
+}
+
 .anim-image-first,
 .product-image-first {
   opacity: 1;
@@ -338,7 +342,7 @@ header {
 /* ---------------- SECTION - KENKAIRO ----------*/
 
 .kenkairo--section {
-  background: url(../images/backgrounds/bg-1-raw.jpg) no-repeat 30% 80% / cover;
+  /*background: url(../images/backgrounds/bg-1-raw.jpg) no-repeat 30% 80% / cover;*/
   color: #E1F5FE;
 }
 
@@ -879,6 +883,10 @@ footer {
     overflow: hidden;
   }
 
+  .anim-img-previewer {
+    height: 590px;
+  }
+
   .anim-image-first,
   .product-image-first {
     opacity: 1;
@@ -928,4 +936,284 @@ footer {
   .nav-footnote-2 {
     width: 150px;
   }
+}
+
+/* #########################################################################
+#  #####################                   #################################
+#  #####################    company.html   #################################
+#  #####################                   #################################
+#  #########################################################################
+*/
+
+.profile-content {
+  width: 100%;
+  height: 100%;
+  padding: 40px 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: #262626;
+}
+
+/* ---------------- PROFILE 1 - SECTION ----------*/
+.profile-1-title {
+  margin: 0 10px 60px 10px;
+  width: 100%;
+}
+
+.profile-1-title > h2 {
+  margin-bottom: 25px;
+}
+
+.name-highlight {
+  font-size: 20px;
+  font-weight: bold;
+  color: #01579B;
+}
+
+.profile-1-picture {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.profile-1-picture > img {
+  width: 200px;
+}
+
+.profile-1-text {
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.profile-1-text > p {
+  margin-bottom: 30px;
+}
+
+/*---------------- PROFILE 2 - SECTION ----------*/
+.profile-2-picture {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.profile-2-picture > img {
+  width: 200px;
+}
+
+.profile-2-text {
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.profile-2-text > p {
+  margin-bottom: 30px;
+}
+
+/* ---------------- PROFILE 3 - SECTION ----------*/
+.profile-3-picture {
+  width: 100%;
+  text-align: center;
+}
+
+.profile-3-text {
+  margin-top: 30px;
+}
+
+.profile-3-text > h2 {
+  margin-bottom: 20px;
+  border-bottom: 3px solid #01579B;;
+  color: #01579B;
+}
+
+.profile-3-text > p {
+  font-size: 20px;
+  line-height: 25px;
+}
+
+/* ---------------- SECTION - TABLE ----------*/
+table {
+  margin-bottom: 100px;
+}
+
+thead {
+  color: #01579B;
+}
+
+tbody {
+  display: flex;
+  flex-direction: column;
+  border-top: 3px solid #01579B;;
+}
+
+tr {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  line-height: 25px;
+}
+
+.col-1 {
+  width: 40%;
+  color: #01579B;
+}
+
+.col-2 {
+  width: 60%;
+
+}
+
+td {
+  vertical-align: top;
+}
+
+/* ===============================================
+*  ===============================================
+*       RESOLUTION WIDTH 768-1024px (iPad)
+*  ===============================================
+*  ===============================================
+*/
+
+@media only screen and (min-width: 768px) {
+  .profile-content {
+    padding: 60px 30px;
+  }
+  /* ---------------- PROFILE 1 - SECTION ----------*/
+  .profile-1-title {
+    width: 50%;
+  }
+
+  .profile-1-title > h2 {
+    font-size: 35px;
+  }
+
+  .profile-1-picture {
+    width: 45%;
+    margin-top: 30px;
+  }
+
+  .profile-1-picture > figure > img {
+    width: 200px;
+  }
+
+  .profile-1-text {
+    width: 100%;
+    font-size: 26px;
+    line-height: 40px;
+  }
+  /*---------------- PROFILE 2 - SECTION ----------*/
+  .profile-2-picture {
+    width: 40%;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .profile-2-picture > figure > img {
+    width: 80%;
+  }
+
+  .profile-2-text {
+    width: 60%;
+    font-size: 20px;
+    line-height: 25px;
+    padding-left: 10px;
+  }
+
+  .profile-2-text > p {
+    margin-bottom: 30px;
+  }
+  /* ---------------- SECTION - TABLE ----------*/
+  table {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+
+  thead {
+    color: #01579B;
+  }
+
+  tbody {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-top: 3px solid #01579B;;
+  }
+
+  tr {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    margin-right: 30px;
+    line-height: 25px;
+  }
+}
+
+/* ===============================================
+*  ===============================================
+*       RESOLUTION WIDTH 1025px ABOVE
+*  ===============================================
+*  ================================================
+*/
+
+@media only screen and (min-width: 1025px) {
+  /* ---------------- PROFILE 1 - SECTION ----------*/
+  .profile-1-title {
+    width: 50%;
+    margin-left: 40px;
+  }
+
+  .profile-1-title > h2 {
+    font-size: 60px;
+  }
+
+  .profile-1-title > p {
+    font-size: 25px;
+  }
+
+  .name-highlight {
+    font-size: 30px;
+  }
+
+  .profile-1-picture {
+    width: 45%;
+    margin-top: 30px;
+  }
+
+  .profile-1-picture > figure > img {
+    width: 200px;
+  }
+
+  .profile-1-text {
+    width: 90%;
+    margin-top: 60px;
+    margin-left: 40px;
+  }
+
+  /*---------------- PROFILE 2 - SECTION ----------*/
+  .profile-2-picture {
+    width: 40%;
+  }
+
+  .profile-2-picture > figure > img {
+    width: 50%;
+  }
+
+  .profile-2-text {
+    width: 50%;
+    line-height: 30px;
+  }
+
+  /*---------------- PROFILE 3 - SECTION ----------*/
+  .profile-3-text > p {
+    font-size: 28px;
+    line-height: 40px;
+  }
+
+  /* ---------------- SECTION - TABLE ----------*/
+  tr {
+    width: 30%;
+  }
+
 }
