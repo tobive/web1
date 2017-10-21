@@ -51,6 +51,24 @@ burgerButton.addEventListener('click', function(e) {
 });
 
 //-------------------------------------------------
+//--- product.html
+//-------------------------------------------------
+var productList = document.querySelectorAll('.product-list');
+
+for(let i=0; i<productList.length; i++) {
+  let list = productList[i].querySelector('.product-title');
+  productList[i].addEventListener('click', function(e) {
+    [].forEach.call(document.querySelectorAll('.product-title'), function(item) {
+      item.classList.remove("show");
+      // item.style.display = 'none';
+    })
+    list.classList.toggle("show");
+    // list.style.display = "block";
+    e.stopPropagation();
+  });
+}
+
+//-------------------------------------------------
 //--- load JSON content for drop-down-form
 //-------------------------------------------------
 var DATA_LOC = "data.json"; // location of json file to be loaded
