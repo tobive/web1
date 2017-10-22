@@ -34,6 +34,7 @@ header {
   background-color: white;
   padding-right: 10px;
   height: 100%;
+  border: 2px solid white;
 }
 
 .title {
@@ -223,6 +224,7 @@ figure > figcaption {
 .prod-m--title-span {
   font-size: 18px;
   font-weight: bold;
+  color: #464646;
 }
 
 .prod-m--text-span {
@@ -297,5 +299,51 @@ figure > figcaption {
 
   .prod-m--img-1 {
     padding-top: 30px;
+  }
+}
+
+/* #########################################################################
+#  #####################                   #################################
+#  #####################    prod-m1.html   #################################
+#  #####################                   #################################
+#  #########################################################################
+*/
+
+.prod-m1--ribbon {
+  background-color: #88c7f3;
+}
+
+.prod-m1--section {
+  margin-bottom: 70px;
+}
+
+.prod-m1--container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.prod-m1--text {
+  width: 200px;
+  margin-top: 30px;
+  font-size: 12px;
+  color: #808080;
+}
+
+.prod-m1--img {
+  margin-top: 30px;
+  width: 100%;
+}
+
+/* ===============================================
+*  ===============================================
+*       RESOLUTION WIDTH 768 Above
+*  ===============================================
+*  ===============================================
+*/
+
+@media only screen and (min-width: 768px) {
+  .prod-m1--img {
+    width: 20%;
   }
 }
