@@ -8,17 +8,14 @@ var TIME_DELAY1 = 4000; //time until image changed
 function createAnimatedImages(animImages, timeDelay) {
   for(let i=animImages.length-1; i>=0; i--) {
     animImages[i].style.opacity = 1;
-    // console.log("put image " + i + " to on." );
     setTimeout(function() {
       animImages[i].style.opacity = 0;
-      // console.log("remove anim from image " + i + " .");
     }, (animImages.length - i) * timeDelay);
   }
 }
 
 createAnimatedImages(imgArr1, TIME_DELAY1);
 setInterval(function() {
-  // console.log("RUNNING");
   createAnimatedImages(imgArr1, TIME_DELAY1);
 }, (imgArr1.length + 1) * TIME_DELAY1);
 
@@ -29,7 +26,6 @@ var TIME_DELAY2 = 3000; //time until image changed
 
 createAnimatedImages(imgArr2, TIME_DELAY2);
 setInterval(function() {
-  // console.log("RUNNING");
   createAnimatedImages(imgArr2, TIME_DELAY2);
 }, (imgArr2.length + 1) * TIME_DELAY2);
 
@@ -51,6 +47,105 @@ burgerButton.addEventListener('click', function(e) {
 });
 
 //-------------------------------------------------
+//--- load JSON content for drop-down-form
+//-------------------------------------------------
+try {
+  var DATA_LOC = "data.json"; // location of json file to be loaded
+  var DOC_LOC = "/documents/"; // path location of documents
+
+  function loadJSON(fileLocation, callback) {
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', fileLocation, true);
+    xobj.onreadystatechange = function() {
+      if(xobj.readyState == 4 && xobj.status == "200") {
+        callback(xobj.responseText);
+      }
+    }
+    xobj.send(null);
+  }
+
+  function populateDropDown(response) {
+    var data = JSON.parse(response);
+    var dropDownYear = document.querySelector("#analysis-year");
+    var dropDownDate = document.querySelector("#analysis-date");
+    var downloadButton = document.querySelector("#download-analysis");
+
+  //populate dropdown for year
+    for(let i=0; i<data.data.length; i++) {
+      let optYear = document.createElement('option');
+      optYear.id = data.data[i].year;
+      optYear.value = i;
+      optYear.appendChild(document.createTextNode(optYear.id));
+      dropDownYear.appendChild(optYear);
+    }
+
+    //populate dropdown for date
+    for(let j=0; j<data.data[0].list.length; j++) {
+      let optDate = document.createElement('option');
+      optDate.id = data.data[0].list[j].date;
+      optDate.value = j;
+      optDate.appendChild(document.createTextNode(optDate.id));
+      dropDownDate.appendChild(optDate);
+    }
+
+    //attach event handler to options in year-dropdown
+    dropDownYear.addEventListener('click', function(e) {
+      dropDownDate.innerHTML = ""; //clear all child node of date-Select element
+      let arrIndex = dropDownYear.options[dropDownYear.selectedIndex].value;
+      for(let j=0; j<data.data[arrIndex].list.length; j++) {
+        let optDate = document.createElement('option');
+        optDate.id = data.data[arrIndex].list[j].date;
+        optDate.value = j;
+        optDate.appendChild(document.createTextNode(optDate.id));
+        dropDownDate.appendChild(optDate);
+      }
+      e.stopPropagation();
+    });
+
+    //attach event handler to download document button
+    downloadButton.addEventListener('click', function(e) {
+      let yearIndex = dropDownYear.options[dropDownYear.selectedIndex].value;
+      let dateIndex = dropDownDate.options[dropDownDate.selectedIndex].value;
+      let fileName = data.data[yearIndex].list[dateIndex].filename;
+      window.open(DOC_LOC + fileName, '_blank');
+      e.stopPropagation();
+    });
+  }
+
+  loadJSON(DATA_LOC, populateDropDown);
+} catch(err) {
+  console.log(err);
+}
+
+//-------------------------------------------------
+//--- Calculate Year
+//-------------------------------------------------
+try {
+  var yearSpan = document.querySelector('#year-span');
+  var year = new Date();
+  var BORN = 1989 + 3;//Heisei year 3
+
+  yearSpan.innerHTML = year.getFullYear() - BORN;
+} catch(err) {
+  console.log(err);
+}
+
+//-------------------------------------------------
+//--- Appearing Image in Viewport - company.html
+//-------------------------------------------------
+try {
+  $(document).ready(function() {
+    $('.imagex').appear();
+    $(document.body).on('appear', '.imagex', function(event, $appeared_el) {
+      $appeared_el.addClass("appeared");
+    });
+  });
+} catch(err) {
+  console.log(err);
+}
+
+//-------------------------------------------------
 //--- product.html
 //-------------------------------------------------
 var productList = document.querySelectorAll('.product-list');
@@ -60,87 +155,8 @@ for(let i=0; i<productList.length; i++) {
   productList[i].addEventListener('click', function(e) {
     [].forEach.call(document.querySelectorAll('.product-title'), function(item) {
       item.classList.remove("show");
-      // item.style.display = 'none';
     })
     list.classList.toggle("show");
-    // list.style.display = "block";
     e.stopPropagation();
   });
 }
-
-//-------------------------------------------------
-//--- load JSON content for drop-down-form
-//-------------------------------------------------
-var DATA_LOC = "data.json"; // location of json file to be loaded
-var DOC_LOC = "/documents/"; // path location of documents
-
-function loadJSON(fileLocation, callback) {
-  var xobj = new XMLHttpRequest();
-  xobj.overrideMimeType("application/json");
-  xobj.open('GET', fileLocation, true);
-  xobj.onreadystatechange = function() {
-    if(xobj.readyState == 4 && xobj.status == "200") {
-      callback(xobj.responseText);
-    }
-  }
-  xobj.send(null);
-}
-
-function populateDropDown(response) {
-  var data = JSON.parse(response);
-  var dropDownYear = document.querySelector("#analysis-year");
-  var dropDownDate = document.querySelector("#analysis-date");
-  var downloadButton = document.querySelector("#download-analysis");
-
-//populate dropdown for year
-  for(let i=0; i<data.data.length; i++) {
-    let optYear = document.createElement('option');
-    optYear.id = data.data[i].year;
-    optYear.value = i;
-    optYear.appendChild(document.createTextNode(optYear.id));
-    dropDownYear.appendChild(optYear);
-  }
-
-  //populate dropdown for date
-  for(let j=0; j<data.data[0].list.length; j++) {
-    let optDate = document.createElement('option');
-    optDate.id = data.data[0].list[j].date;
-    optDate.value = j;
-    optDate.appendChild(document.createTextNode(optDate.id));
-    dropDownDate.appendChild(optDate);
-  }
-
-  //attach event handler to options in year-dropdown
-  dropDownYear.addEventListener('click', function(e) {
-    dropDownDate.innerHTML = ""; //clear all child node of date-Select element
-    let arrIndex = dropDownYear.options[dropDownYear.selectedIndex].value;
-    for(let j=0; j<data.data[arrIndex].list.length; j++) {
-      let optDate = document.createElement('option');
-      optDate.id = data.data[arrIndex].list[j].date;
-      optDate.value = j;
-      optDate.appendChild(document.createTextNode(optDate.id));
-      dropDownDate.appendChild(optDate);
-    }
-    e.stopPropagation();
-  });
-
-  //attach event handler to download document button
-  downloadButton.addEventListener('click', function(e) {
-    let yearIndex = dropDownYear.options[dropDownYear.selectedIndex].value;
-    let dateIndex = dropDownDate.options[dropDownDate.selectedIndex].value;
-    let fileName = data.data[yearIndex].list[dateIndex].filename;
-    window.open(DOC_LOC + fileName, '_blank');
-    e.stopPropagation();
-  });
-}
-
-loadJSON(DATA_LOC, populateDropDown);
-
-//-------------------------------------------------
-//--- Calculate Year
-//-------------------------------------------------
-var yearSpan = document.querySelector('#year-span');
-var year = new Date();
-var BORN = 1989 + 3;//Heisei year 3
-
-yearSpan.innerHTML = year.getFullYear() - BORN;

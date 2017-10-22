@@ -389,7 +389,7 @@ header {
 
 .analysis--section {
   padding: 30px 15px 100px 15px;
-  background: url(../images/backgrounds/bg-2-azure2.jpg) no-repeat 30% 80% / cover;
+  /*background: url(../images/backgrounds/bg-2-azure2.jpg) no-repeat 30% 80% / cover;*/
 }
 
 .analysis-text {
@@ -604,8 +604,8 @@ footer {
     /*min-width: 768px;*/
   }
 
-  .anim-image {
-    /*min-width: 768px;*/
+  .anim-img-previewer > img {
+    margin-left: -200px;
   }
 
   .product-img-previewer {
@@ -694,6 +694,10 @@ footer {
     right: 50px;
     font-size: 50px;
     right: 40px;
+  }
+
+  .anim-img-previewer > img {
+    margin-left: 0px;
   }
 
   /* ---------------- NAV BAR ----------*/
@@ -977,6 +981,13 @@ footer {
   margin-bottom: 40px;
 }
 
+.img-1-wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 115px;
+  height: 115px;
+}
+
 .profile-1-picture > img {
   width: 200px;
 }
@@ -992,9 +1003,16 @@ footer {
 
 /*---------------- PROFILE 2 - SECTION ----------*/
 .profile-2-picture {
+  position: relative;
   width: 100%;
-  text-align: center;
   margin-bottom: 40px;
+}
+
+.img-2-wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 260px;
+  height: 184px;
 }
 
 .profile-2-picture > img {
@@ -1012,8 +1030,26 @@ footer {
 
 /* ---------------- PROFILE 3 - SECTION ----------*/
 .profile-3-picture {
-  width: 100%;
-  text-align: center;
+  position: relative;
+  margin: 0 auto;
+}
+
+.img-3-wrapper {
+  position: relative;
+  width: 305px;
+  height: 313px;
+}
+
+.imagex {
+  top: 50px;
+  opacity: 0;
+}
+
+.appeared {
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  transition: top 0.8s ease-out, opacity 0.8s ease-out;
 }
 
 .profile-3-text {
@@ -1181,7 +1217,14 @@ td {
     margin-top: 30px;
   }
 
-  .profile-1-picture > figure > img {
+  .img-1-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+  }
+
+  .img-1-wrapper > figure > img {
     width: 200px;
   }
 
