@@ -1,0 +1,4 @@
+{
+  "in": "product-page.css",
+  "out": "product-page.fixed.css"
+}

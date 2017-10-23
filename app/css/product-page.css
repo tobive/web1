@@ -1,0 +1,547 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.main-container {
+  padding: 15px 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category {
+  width: 100%;
+  font-size: 15px;
+}
+
+.category > span {
+  background-color: white;
+  padding-right: 10px;
+  height: 100%;
+  border: 4px solid white;
+}
+
+.title {
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.left-content,
+.right-content {
+  width: 100%%;
+}
+
+.image > img {
+  width: 100%;
+}
+
+.text {
+  margin-top: 30px;
+}
+
+.back {
+  margin-top: 25px;
+  width: auto;
+  text-align: center;
+  font-size: 25px;
+}
+
+footer {
+  height: 100px;
+  color: #686767;
+  font-size: 11px;
+}
+
+footer > p {
+  margin-top: 60px;
+  font-weight: bold;
+  text-align: center;
+}
+
+footer > p > span {
+  margin-left: 10px;
+  font-size: 9px;
+}
+
+figure > figcaption {
+  font-size: 12px;
+  color: #808080;
+}
+
+/* ===============================================
+*  ===============================================
+*       RESOLUTION WIDTH 768 Above
+*  ===============================================
+*  ===============================================
+*/
+
+@media only screen and (min-width: 768px) {
+  .main-container {
+    margin: 0 auto;
+    padding: 20px 30px;
+    width: 900px;
+  }
+
+  .title {
+    height: 150px;
+  }
+
+  .left-content {
+    width: 60%;
+    padding-right: 30px;
+  }
+
+  .right-content {
+    width: 40%;
+  }
+
+  footer {
+    height: 20px;
+  }
+
+  footer > p {
+    margin-top: 10px;
+  }
+}
+
+
+/* #########################################################################
+#  #####################                   #################################
+#  #####################    prod-kou.html   #################################
+#  #####################                   #################################
+#  #########################################################################
+*/
+
+.prod-kou--ribbon {
+  background-color: #97ff99;
+}
+
+.prod-kou--title-h1 {
+  font-size: 26px;
+  color: #808080;
+}
+
+.prod-kou--title-span {
+  font-size: 22px;
+  color: #464646;
+}
+
+.prod-kou--text-1,
+.prod-kou--text-2 {
+  font-size: 14px;
+  color: #464646;
+}
+
+.prod-kou--text-2 {
+  line-height: 25px;
+}
+
+.prod-kou--text-2 > span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* ===============================================
+*  ===============================================
+*       RESOLUTION WIDTH 768 Above
+*  ===============================================
+*  ===============================================
+*/
+
+@media only screen and (min-width: 768px) {
+  .prod-kou--text-1,
+  .prod-kou--text-2 {
+    font-size: 14px;
+    color: #464646;
+  }
+
+  .prod-kou--text-2 {
+    line-height: 20px;
+  }
+
+  .prod-kou--text-2 > span {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+/* #########################################################################
+#  #####################                   #################################
+#  #####################    prod-m.html   #################################
+#  #####################                   #################################
+#  #########################################################################
+*/
+
+.prod-m--ribbon {
+  background-color: #88c7f3;
+}
+
+.left-content--container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.left-content--container-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.prod-m--title-p {
+  margin-top: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #414141;
+  width: 240px;
+}
+
+.prod-m--title-span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #464646;
+}
+
+.prod-m--text-span {
+  margin-top: 30px;
+  color: #808080;
+}
+
+.prod-m--text-2 {
+  margin-top: 30px;
+}
+
+.prod-m--container-bottom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.prod-m--img-right {
+  margin-top: 25px;
+  text-align: right;
+}
+
+.right-content--container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ===============================================
+*  ===============================================
+*       RESOLUTION WIDTH 768 Above
+*  ===============================================
+*  ===============================================
+*/
+
+@media only screen and (min-width: 768px) {
+  .prod-m--left {
+    width: 60%;
+    padding-right: 0px;
+  }
+
+  .prod-m--right {
+    width: 40%;
+    padding-left: 30px;
+  }
+
+  .left-content--container-left {
+    width: 71%;
+  }
+
+  .prod-m--text-span {
+    font-size: 21px;
+  }
+
+  .prod-m--text-2 {
+    font-size: 13px;
+    line-height: 20px;
+    color: #808080;
+  }
+
+  .prod-m--img-2 {
+    width: 40%;
+  }
+
+  .prod-m--text-3 {
+    width: 60%;
+    font-size: 13px;
+    line-height: 20px;
+    color: #808080;
+  }
+
+  .prod-m--img-1 {
+    padding-top: 30px;
+  }
+}
+
+/* #########################################################################
+#  #####################                   #################################
+#  #####################    prod-m1.html   #################################
+#  #####################                   #################################
+#  #########################################################################
+*/
+
+.prod-m1--ribbon {
+  background-color: #88c7f3;
+}
+
+.prod-m1--section {
+  margin-bottom: 70px;
+}
+
+.prod-m1--container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.prod-m1--text {
+  width: 200px;
+  margin-top: 30px;
+  font-size: 12px;
+  color: #808080;
+}
+
+.prod-m1--img {
+  margin-top: 30px;
+  width: 100%;
+}
+
+/* ===============================================
+*  ===============================================
+*       RESOLUTION WIDTH 768 Above
+*  ===============================================
+*  ===============================================
+*/
+
+@media only screen and (min-width: 768px) {
+  .prod-m1--img {
+    width: 20%;
+  }
+}
+
+/* #########################################################################
+#  #####################                   #################################
+#  #####################    prod-dna.html   #################################
+#  #####################                   #################################
+#  #########################################################################
+*/
+
+.prod-dna--ribbon {
+  background-color: #ff96ff;
+}
+
+.prod-dna--img {
+  margin-top: 20px;
+  /*width: 100%;*/
+}
+
+.prod-dna--img > figure > img {
+  width: 300px;
+}
+
+/* ===============================================
+*  ===============================================
+*       RESOLUTION WIDTH 768 Above
+*  ===============================================
+*  ===============================================
+*/
+
+@media only screen and (min-width: 768px) {
+  .prod-dna--img > figure > img {
+    width: 380px;
+  }
+}
+
+/* #########################################################################
+#  #####################                   #################################
+#  #####################   prod-dna1.html  #################################
+#  #####################                   #################################
+#  #########################################################################
+*/
+
+.prod-dna1--container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.prod-dna1--left {
+  width: 100%;
+}
+
+.prod-dna1--right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.prod-dna1--right > figure > img {
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* ===============================================
+*  ===============================================
+*       RESOLUTION WIDTH 768 Above
+*  ===============================================
+*  ===============================================
+*/
+
+@media only screen and (min-width: 768px) {
+  .prod-dna1--left {
+    width: 28%;
+  }
+
+  .prod-dna1--right {
+    width: 70%;
+    padding-left: 20px;
+  }
+
+  .prod-dna1--right > figure > img {
+    margin-top: 0px;
+  }
+}
+
+/* #########################################################################
+#  #####################                   #################################
+#  #####################  prod-thz-h1.html #################################
+#  #####################                   #################################
+#  #########################################################################
+*/
+
+.prod-thz--ribbon {
+  background-color: #bebebe;
+}
+
+.prod-thz-h1--left {
+  width: 100%;
+}
+
+.prod-thz-h1--right {
+  width: 100%;
+}
+
+.prod-thz-1--container-right {
+  width: 100%;
+}
+
+.prod-thz-h1--img-1 > img {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* ===============================================
+*  ===============================================
+*       RESOLUTION WIDTH 768 Above
+*  ===============================================
+*  ===============================================
+*/
+
+@media only screen and (min-width: 768px) {
+  .prod-thz-h1--left {
+    width: 50%;
+  }
+
+  .prod-thz-h1--right {
+    width: 50%;
+  }
+
+  .prod-thz-1--container-right {
+    width: 51%;
+  }
+}
+
+/* #########################################################################
+#  #####################                   #################################
+#  #####################   prod-thz.html   #################################
+#  #####################                   #################################
+#  #########################################################################
+*/
+
+.prod-thz--left {
+  width: 100%;
+  padding-right: 20px;
+}
+
+.prod-thz--left > figure > img {
+  width: 100%;
+}
+
+.prod-thz--right {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.prod-thz--text {
+  width: 100%;
+}
+
+.prod-thz--img-1 {
+  margin: 20px auto;
+}
+
+.prod-thz--img-2 > img {
+  width: 100%;
+}
+
+/* ===============================================
+*  ===============================================
+*       RESOLUTION WIDTH 768 Above
+*  ===============================================
+*  ===============================================
+*/
+
+@media only screen and (min-width: 768px) {
+  .prod-thz--left {
+    width: 50%;
+    padding-right: 20px;
+  }
+
+  .prod-thz--right {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .prod-thz--text {
+    width: 50%;
+  }
+
+  .prod-thz--img-1 {
+    margin-top: 40px;
+    margin-left: 30px;
+  }
+}
