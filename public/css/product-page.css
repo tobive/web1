@@ -34,7 +34,7 @@ header {
   background-color: white;
   padding-right: 10px;
   height: 100%;
-  border: 2px solid white;
+  border: 4px solid white;
 }
 
 .title {
@@ -345,5 +345,203 @@ figure > figcaption {
 @media only screen and (min-width: 768px) {
   .prod-m1--img {
     width: 20%;
+  }
+}
+
+/* #########################################################################
+#  #####################                   #################################
+#  #####################    prod-dna.html   #################################
+#  #####################                   #################################
+#  #########################################################################
+*/
+
+.prod-dna--ribbon {
+  background-color: #ff96ff;
+}
+
+.prod-dna--img {
+  margin-top: 20px;
+  /*width: 100%;*/
+}
+
+.prod-dna--img > figure > img {
+  width: 300px;
+}
+
+/* ===============================================
+*  ===============================================
+*       RESOLUTION WIDTH 768 Above
+*  ===============================================
+*  ===============================================
+*/
+
+@media only screen and (min-width: 768px) {
+  .prod-dna--img > figure > img {
+    width: 380px;
+  }
+}
+
+/* #########################################################################
+#  #####################                   #################################
+#  #####################   prod-dna1.html  #################################
+#  #####################                   #################################
+#  #########################################################################
+*/
+
+.prod-dna1--container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.prod-dna1--left {
+  width: 100%;
+}
+
+.prod-dna1--right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.prod-dna1--right > figure > img {
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* ===============================================
+*  ===============================================
+*       RESOLUTION WIDTH 768 Above
+*  ===============================================
+*  ===============================================
+*/
+
+@media only screen and (min-width: 768px) {
+  .prod-dna1--left {
+    width: 28%;
+  }
+
+  .prod-dna1--right {
+    width: 70%;
+    padding-left: 20px;
+  }
+
+  .prod-dna1--right > figure > img {
+    margin-top: 0px;
+  }
+}
+
+/* #########################################################################
+#  #####################                   #################################
+#  #####################  prod-thz-h1.html #################################
+#  #####################                   #################################
+#  #########################################################################
+*/
+
+.prod-thz--ribbon {
+  background-color: #bebebe;
+}
+
+.prod-thz-h1--left {
+  width: 100%;
+}
+
+.prod-thz-h1--right {
+  width: 100%;
+}
+
+.prod-thz-1--container-right {
+  width: 100%;
+}
+
+.prod-thz-h1--img-1 > img {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* ===============================================
+*  ===============================================
+*       RESOLUTION WIDTH 768 Above
+*  ===============================================
+*  ===============================================
+*/
+
+@media only screen and (min-width: 768px) {
+  .prod-thz-h1--left {
+    width: 50%;
+  }
+
+  .prod-thz-h1--right {
+    width: 50%;
+  }
+
+  .prod-thz-1--container-right {
+    width: 51%;
+  }
+}
+
+/* #########################################################################
+#  #####################                   #################################
+#  #####################   prod-thz.html   #################################
+#  #####################                   #################################
+#  #########################################################################
+*/
+
+.prod-thz--left {
+  width: 100%;
+  padding-right: 20px;
+}
+
+.prod-thz--left > figure > img {
+  width: 100%;
+}
+
+.prod-thz--right {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.prod-thz--text {
+  width: 100%;
+}
+
+.prod-thz--img-1 {
+  margin: 20px auto;
+}
+
+.prod-thz--img-2 > img {
+  width: 100%;
+}
+
+/* ===============================================
+*  ===============================================
+*       RESOLUTION WIDTH 768 Above
+*  ===============================================
+*  ===============================================
+*/
+
+@media only screen and (min-width: 768px) {
+  .prod-thz--left {
+    width: 50%;
+    padding-right: 20px;
+  }
+
+  .prod-thz--right {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .prod-thz--text {
+    width: 50%;
+  }
+
+  .prod-thz--img-1 {
+    margin-top: 40px;
+    margin-left: 30px;
   }
 }
