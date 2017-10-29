@@ -54,7 +54,6 @@ header {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  font-size: 32px;
   padding: 10px;
   z-index: 10;
   background-color: white;
@@ -113,7 +112,7 @@ header {
   top: -999px;
   padding-top: 70px;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   z-index: 4;
   display: flex;
   flex-direction: column;
@@ -169,6 +168,45 @@ header {
 .nav-page-menu > ul > li > a {
   text-decoration: none;
   color: #01579B;
+}
+
+.hidden-nav {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.hidden-nav.expand {
+  max-height: 500px;
+  transition: max-height 0.5s ease-in;
+}
+
+.hidden-nav > li {
+  list-style-type: none;
+  padding: 10px 0;
+}
+
+.hidden-nav > li > a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #01579B;
+}
+
+.nav-menu--plus {
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background-color: #01579B;
+}
+
+.nav-menu--plus:after {
+  content: '+';
+  color: white;
+}
+
+.nav-menu--plus.minus:after {
+  content: '-';
 }
 
 .nav-page-footer {
@@ -654,7 +692,7 @@ footer {
     position: absolute;
     right: 50px;
     bottom: 20px;
-    z-index: 4;
+    z-index: 3;
   }
 
   .product-intro--text > p {
@@ -754,6 +792,27 @@ footer {
 
   .nav-bar-menu > ul > li > a:hover {
     color: #01487f;
+  }
+
+  .hidden-nav {
+    transition: max-height 0s;
+    position: absolute;
+  }
+
+  .hidden-nav > li > a {
+    color: #03A9F4;
+  }
+
+  .hidden-nav > li > a:hover {
+    color: #01487f;
+  }
+
+  .nav-menu--expand:hover > .hidden-nav {
+    position: absolute;
+    max-height: 400px;
+    overflow: visible;
+    background-color: white;
+    padding: 20px 20px;
   }
 
   /* ---------------- SECTION - PRODUCT INTRO ----------*/
