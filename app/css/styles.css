@@ -506,7 +506,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 350px;
+  height: 400px;
   background-color: #01579B;
   padding: 10px 15px 15px 15px;
   display: flex;
@@ -1525,10 +1525,12 @@ td {
 
 .ken1-img-wrapper {
   height: 300px;
+
 }
 
 .ken1-img {
   width: 290px;
+  height: auto;
 }
 
 .ken1-img > figure > img {
@@ -1581,7 +1583,7 @@ td {
 }
 
 .ken2-floor-plan--img > figure > img {
-  width: 320px;
+  width: 300px;
 }
 
 .ken2-floor-plan--legend {
@@ -1606,6 +1608,10 @@ td {
   .ken2-floor-plan--img {
     width: 50%;
     text-align: center;
+  }
+
+  .ken2-floor-plan--img > figure > img {
+    width: 400px;
   }
 
   .ken2-floor-plan--legend {
