@@ -797,6 +797,7 @@ footer {
   .hidden-nav {
     transition: max-height 0s;
     position: absolute;
+    box-shadow: 0 10px 6px -6px #777;
   }
 
   .hidden-nav > li > a {
@@ -1569,7 +1570,48 @@ td {
 .ken2-floor-plan--title {
   margin: 0 10px 60px 10px;
   width: 100%;
-  background-color: red;
+}
+
+.ken2-floor-plan--img {
+  width: 100%;
+}
+
+.ken2-floor-plan--img > figure {
+  position: relative;
+}
+
+.ken2-floor-plan--img > figure > img {
+  width: 320px;
+}
+
+.ken2-floor-plan--legend {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  padding-left: 30px;
+}
+
+.ken2-floor-plan--legend > ol > li {
+  margin-top: 10px;
+}
+
+/* ===============================================
+*  ===============================================
+*       RESOLUTION WIDTH 768px ABOVE (iPad)
+*  ===============================================
+*  ================================================
+*/
+
+@media only screen and (min-width: 768px) {
+  .ken2-floor-plan--img {
+    width: 50%;
+    text-align: center;
+  }
+
+  .ken2-floor-plan--legend {
+    width: 50%;
+    font-size: 20px;
+  }
 }
 
 /* ===============================================
@@ -1581,7 +1623,30 @@ td {
 
 @media only screen and (min-width: 1025px) {
   .ken2-floor-plan--title {
-    margin-left: 40px;
+    width: 100%;
+    margin-right: 40px;
     font-size: 25px;
+    text-align: right;
+  }
+
+  .ken2-floor-plan--img {
+    width: 60%;
+  }
+
+  .ken2-floor-plan--legend {
+    width: 40%;
+  }
+
+  .ken2-floor-plan--legend > ol > li {
+    margin-top: 5px;
+  }
+
+  .legend-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .legend-link:hover {
+    color: #01487f;
   }
 }
