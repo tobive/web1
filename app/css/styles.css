@@ -119,6 +119,7 @@ header {
   justify-content: space-between;
   background-color: white;
   opacity: 0;
+  overflow-y: auto;
 }
 
 .nav-page.show {
@@ -193,7 +194,11 @@ header {
 }
 
 .nav-menu--plus {
-  display: inline-block;
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 23px;
   height: 23px;
   border-radius: 50%;
@@ -249,7 +254,7 @@ header {
 
 .content {
   padding-top: 70px;
-  padding-bottom: 350px;
+  padding-bottom: 400px;
   z-index: 1;
 }
 
@@ -622,6 +627,10 @@ footer {
 */
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .content {
+    padding-bottom: 350px;
+  }
+
   section {
     min-height: 0px;
   }
@@ -721,6 +730,10 @@ footer {
   }
 
   /* ---------------- FOOTER ---------- */
+  footer {
+    height: 350px;
+  }
+
   .footnote-link--small {
     height: auto;
   }
@@ -742,6 +755,10 @@ footer {
 */
 
 @media only screen and (min-width: 1025px) {
+  .content {
+    padding-bottom: 350px;
+  }
+
   /* ---------------- HERO ----------*/
   .hero-text {
     top: 400px;
@@ -1131,10 +1148,11 @@ footer {
 .imagex {
   top: 50px;
   opacity: 0;
+  height: auto;
 }
 
 .appeared {
-  position: absolute;
+  position: absolute; /* for moving animation */
   top: 0;
   opacity: 1;
   transition: top 0.8s ease-out, opacity 0.8s ease-out;
@@ -1530,11 +1548,74 @@ td {
 
 .ken1-img {
   width: 290px;
-  height: auto;
+  height: 320px;
 }
 
 .ken1-img > figure > img {
   width: 290px;
+}
+
+.ken1-text {
+  margin-bottom: 50px;
+}
+
+.cell--section {
+  min-height: 100px;
+  height: auto;
+  /*margin-bottom: 80px;*/
+  padding-bottom: 0px;
+}
+
+.cell--container {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.cell--title {
+  width: 100%;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.cell--text {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.cell--text > p {
+  width: 100%;
+  font-size: 21px;
+  line-height: 35px;
+}
+
+.cell--link {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-right: 20px;
+  padding-left: 40px;
+  padding-bottom: 20px;
+  text-align: left;
+}
+
+.cell--link > a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 25px;
+  border: 2px solid pink;
+  border-radius: 15px;
+  background-color: pink;
+  color: white;
+  box-shadow: 0 10px 6px -6px #777;
+}
+
+.cell--link > a:hover {
+  padding: 14px 15px;
+  font-size: 26px;
 }
 
 /* ===============================================
@@ -1552,6 +1633,57 @@ td {
   .ken1-img > figure > img {
     width: 400px;
   }
+
+  .cell--section {
+    min-height: 304px;
+    margin-bottom: -45px;
+    padding-bottom: 0px;
+  }
+
+  .cell--container {
+    height: 304px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .cell--title {
+    width: 100%;
+    font-size: 25px;
+    padding-left: 50px;
+  }
+
+  .cell--text {
+    width: 50%;
+    padding-left: 50px;
+  }
+
+  .cell--text > p {
+    width: 500px;
+    font-size: 21px;
+    line-height: 35px;
+  }
+
+  .cell--link {
+    width: 50%;
+    padding-right: 100px;
+    text-align: right;
+  }
+
+  .cell--link > a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    border: 2px solid pink;
+    border-radius: 15px;
+    background-color: pink;
+    color: white;
+    box-shadow: 0 10px 6px -6px #777;
+  }
+
+  .cell--link > a:hover {
+    padding: 15px 15px;
+  }
 }
 
 /* #########################################################################
@@ -1561,8 +1693,19 @@ td {
 #  #########################################################################
 */
 
+.ken2-img {
+  width: 300px;
+  height: auto;
+  /*height: 300px;*/
+}
+
+.ken2-img > figure > img {
+  width: 300px;
+}
+
 .ken2-img-wrapper {
   margin-bottom: 60px;
+  height: 200px;
 }
 
 .ken2-text-1 {
@@ -1588,7 +1731,7 @@ td {
 
 .ken2-floor-plan--legend {
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
   width: 100%;
   padding-left: 30px;
 }
@@ -1605,6 +1748,10 @@ td {
 */
 
 @media only screen and (min-width: 768px) {
+  .ken2-img > figure > img {
+    width: 400px;
+  }
+
   .ken2-floor-plan--img {
     width: 50%;
     text-align: center;
