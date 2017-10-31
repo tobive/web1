@@ -1749,7 +1749,7 @@ td {
 
 @media only screen and (min-width: 768px) {
   .ken2-img > figure > img {
-    width: 400px;
+    width: 300px;
   }
 
   .ken2-floor-plan--img {
@@ -1758,7 +1758,7 @@ td {
   }
 
   .ken2-floor-plan--img > figure > img {
-    width: 400px;
+    width: 300px;
   }
 
   .ken2-floor-plan--legend {
@@ -1782,6 +1782,14 @@ td {
     text-align: right;
   }
 
+  .ken2-img > figure > img {
+    width: 400px;
+  }
+
+  .ken2-floor-plan--img > figure > img {
+    width: 400px;
+  }
+
   .ken2-floor-plan--img {
     width: 60%;
   }
@@ -1801,5 +1809,50 @@ td {
 
   .legend-link:hover {
     color: #01487f;
+  }
+}
+
+/* #########################################################################
+#  #####################                   #################################
+#  #####################    ken3.html   #################################
+#  #####################                   #################################
+#  #########################################################################
+*/
+
+.ken3-title-1 {
+  margin-bottom: 20px;
+}
+
+.ken3-img-wrapper-1 {
+  width: auto;
+  height: 230px;
+}
+
+.ken3-img-wrapper-1 > figure > img {
+  width: 250px;
+}
+
+/* ===============================================
+*  ===============================================
+*       RESOLUTION WIDTH 1025px ABOVE
+*  ===============================================
+*  ================================================
+*/
+
+@media only screen and (min-width: 1025px) {
+  .ken3-title-1 > h2 {
+    font-size: 50px;
+  }
+
+  .ken3-img-wrapper-1 {
+    margin-left: 150px;
+  }
+
+  .ken3-img-wrapper-1 > figure > img {
+    width: 300px;
+  }
+
+  .ken3-img-wrapper-2 > figure > img {
+    width: 500px;
   }
 }
