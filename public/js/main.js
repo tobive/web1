@@ -47,6 +47,32 @@ burgerButton.addEventListener('click', function(e) {
 });
 
 //-------------------------------------------------
+//--- expand nav menu
+//-------------------------------------------------
+var navMenuExpand = document.querySelectorAll('.nav-menu--expand');
+
+for(let i=0; i<navMenuExpand.length; i++) {
+  let list = navMenuExpand[i].querySelector('.hidden-nav');
+  let plusSign = navMenuExpand[i].querySelector('a > .nav-menu--plus');
+  navMenuExpand[i].addEventListener('click', function(e) {
+    if(list.classList.contains("expand")) {
+      list.classList.toggle("expand");
+      plusSign.classList.toggle("minus");
+    } else {
+      [].forEach.call(document.querySelectorAll('.hidden-nav'), function(item) {
+        item.classList.remove("expand");
+      });
+      [].forEach.call(document.querySelectorAll('a > .nav-menu--plus'), function(item) {
+        item.classList.remove("minus");
+      });
+      list.classList.toggle("expand");
+      plusSign.classList.toggle("minus");
+    }
+    e.stopPropagation();
+  });
+}
+
+//-------------------------------------------------
 //--- load JSON content for drop-down-form
 //-------------------------------------------------
 try {
@@ -54,63 +80,72 @@ try {
   var DOC_LOC = "/documents/"; // path location of documents
 
   function loadJSON(fileLocation, callback) {
-    var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-    xobj.open('GET', fileLocation, true);
-    xobj.onreadystatechange = function() {
-      if(xobj.readyState == 4 && xobj.status == "200") {
-        callback(xobj.responseText);
+    try {
+      var xobj = new XMLHttpRequest();
+      xobj.overrideMimeType("application/json");
+      xobj.open('GET', fileLocation, true);
+      xobj.onreadystatechange = function() {
+        if(xobj.readyState == 4 && xobj.status == "200") {
+          callback(xobj.responseText);
+        }
       }
+      xobj.send(null);
+    } catch(err) {
+      console.log(err);
     }
-    xobj.send(null);
   }
 
   function populateDropDown(response) {
-    var data = JSON.parse(response);
-    var dropDownYear = document.querySelector("#analysis-year");
-    var dropDownDate = document.querySelector("#analysis-date");
-    var downloadButton = document.querySelector("#download-analysis");
+    try {
+      var data = JSON.parse(response);
+      var dropDownYear = document.querySelector("#analysis-year");
+      var dropDownDate = document.querySelector("#analysis-date");
+      var downloadButton = document.querySelector("#download-analysis");
 
-  //populate dropdown for year
-    for(let i=0; i<data.data.length; i++) {
-      let optYear = document.createElement('option');
-      optYear.id = data.data[i].year;
-      optYear.value = i;
-      optYear.appendChild(document.createTextNode(optYear.id));
-      dropDownYear.appendChild(optYear);
-    }
+    //populate dropdown for year
+      for(let i=0; i<data.data.length; i++) {
+        let optYear = document.createElement('option');
+        optYear.id = data.data[i].year;
+        optYear.value = i;
+        optYear.appendChild(document.createTextNode(optYear.id));
+        dropDownYear.appendChild(optYear);
+      }
 
-    //populate dropdown for date
-    for(let j=0; j<data.data[0].list.length; j++) {
-      let optDate = document.createElement('option');
-      optDate.id = data.data[0].list[j].date;
-      optDate.value = j;
-      optDate.appendChild(document.createTextNode(optDate.id));
-      dropDownDate.appendChild(optDate);
-    }
-
-    //attach event handler to options in year-dropdown
-    dropDownYear.addEventListener('click', function(e) {
-      dropDownDate.innerHTML = ""; //clear all child node of date-Select element
-      let arrIndex = dropDownYear.options[dropDownYear.selectedIndex].value;
-      for(let j=0; j<data.data[arrIndex].list.length; j++) {
+      //populate dropdown for date
+      for(let j=0; j<data.data[0].list.length; j++) {
         let optDate = document.createElement('option');
-        optDate.id = data.data[arrIndex].list[j].date;
+        optDate.id = data.data[0].list[j].date;
         optDate.value = j;
         optDate.appendChild(document.createTextNode(optDate.id));
         dropDownDate.appendChild(optDate);
       }
-      e.stopPropagation();
-    });
 
-    //attach event handler to download document button
-    downloadButton.addEventListener('click', function(e) {
-      let yearIndex = dropDownYear.options[dropDownYear.selectedIndex].value;
-      let dateIndex = dropDownDate.options[dropDownDate.selectedIndex].value;
-      let fileName = data.data[yearIndex].list[dateIndex].filename;
-      window.open(DOC_LOC + fileName, '_blank');
-      e.stopPropagation();
-    });
+      //attach event handler to options in year-dropdown
+      dropDownYear.addEventListener('change', function(e) {
+        dropDownDate.innerHTML = ""; //clear all child node of date-Select element
+        let arrIndex = dropDownYear.options[dropDownYear.selectedIndex].value;
+        for(let j=0; j<data.data[arrIndex].list.length; j++) {
+          let optDate = document.createElement('option');
+          optDate.id = data.data[arrIndex].list[j].date;
+          optDate.value = j;
+          optDate.appendChild(document.createTextNode(optDate.id));
+          dropDownDate.appendChild(optDate);
+        }
+        e.stopPropagation();
+      });
+
+      //attach event handler to download document button
+      downloadButton.addEventListener('click', function(e) {
+        let yearIndex = dropDownYear.options[dropDownYear.selectedIndex].value;
+        let dateIndex = dropDownDate.options[dropDownDate.selectedIndex].value;
+        let fileName = data.data[yearIndex].list[dateIndex].filename;
+        window.open(DOC_LOC + fileName, '_blank');
+        e.stopPropagation();
+      });
+    } catch(err) {
+      console.log(err);
+    }
+
   }
 
   loadJSON(DATA_LOC, populateDropDown);
@@ -153,10 +188,14 @@ var productList = document.querySelectorAll('.product-list');
 for(let i=0; i<productList.length; i++) {
   let list = productList[i].querySelector('.product-title');
   productList[i].addEventListener('click', function(e) {
-    [].forEach.call(document.querySelectorAll('.product-title'), function(item) {
-      item.classList.remove("show");
-    })
-    list.classList.toggle("show");
+    if(list.classList.contains("show")) {
+      list.classList.toggle("show");
+    } else {
+      [].forEach.call(document.querySelectorAll('.product-title'), function(item) {
+        item.classList.remove("show");
+      })
+      list.classList.toggle("show");
+    }
     e.stopPropagation();
   });
 }
