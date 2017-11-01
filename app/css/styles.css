@@ -358,7 +358,7 @@ header {
   overflow: hidden;
 }
 
-.product-img-previewer > img {
+.product-img-previewer > picture > img {
   width: 100%;
 }
 

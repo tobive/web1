@@ -72,7 +72,7 @@
             <div class="nav-footnote-2">
               <span><a href="mailto:well@seagullnet.co.jp">contact</a></span>
               <span>|</span>
-              <span><a href="www.seagullnet.co.jp/s-map.html">sitemap</a></span>
+              <span><a href="www.seagullnet.co.jp/sitemap.html">sitemap</a></span>
             </div>
           </div>
         </div>
@@ -101,9 +101,18 @@
           <div class="product-intro--info">
             <div class="product-img-container">
               <div class="product-img-previewer">
-                <img class="product-image-first" src="images/products/product-sample-1.jpg"/>
-                <img class="product-image" src="images/products/product-sample-2.jpg"/>
-                <img class="product-image" src="images/products/product-sample-3.jpg"/>
+                <picture class="product-image-first">
+                  <source media="(min-width: 768px)" srcset="images/products/product-sample-1_high.jpg"/>
+                  <img class="product-image-first" src="images/products/product-sample-1.jpg"/>
+                </picture>
+                <picture class="product-image">
+                  <source media="(min-width: 768px)" srcset="images/products/product-sample-2_high.jpg"/>
+                  <img class="product-image-first" src="images/products/product-sample-2.jpg"/>
+                </picture>
+                <picture class="product-image">
+                  <source media="(min-width: 768px)" srcset="images/products/product-sample-3_high.jpg"/>
+                  <img class="product-image-first" src="images/products/product-sample-3.jpg"/>
+                </picture>
               </div>
               <div class="product-accent">
                 <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
