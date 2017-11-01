@@ -196,8 +196,11 @@ header {
 .nav-menu--plus {
   display: -webkit-inline-flex;
   display: inline-flex;
+  -webkit-flex-direction: column;
   flex-direction: column;
+  -webkit-justify-content: center;
   justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
   width: 20px;
   height: 20px;

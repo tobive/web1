@@ -121,7 +121,7 @@ try {
       }
 
       //attach event handler to options in year-dropdown
-      dropDownYear.addEventListener('click', function(e) {
+      dropDownYear.addEventListener('change', function(e) {
         dropDownDate.innerHTML = ""; //clear all child node of date-Select element
         let arrIndex = dropDownYear.options[dropDownYear.selectedIndex].value;
         for(let j=0; j<data.data[arrIndex].list.length; j++) {
